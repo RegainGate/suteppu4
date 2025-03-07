@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* PCでスクロールを防ぐ */
+}
+
+h2 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    width: 100%;
+}
+
+/* PDFビューア */
+#viewer {
+    width: 100vw;
+    height: 85vh; /* PCでは画面高の85%を使用 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PDFを全画面に表示 */
+object {
+    width: 100%;
+    height: 85vh;
+    border: none;
+}
+
+/* 操作ボタン（戻る・次へ） */
+.controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ボタンの共通スタイル */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+input[type="password"] {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+/* 📌 「PDFを直接開く」リンクの位置を調整 */
+.pdf-link {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.pdf-link a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* 📌 「暗号を見る」ボタンを「次へ」の右側に配置 */
+.hint-container {
+    margin-left: 10px; /* 「次へ」ボタンとの間隔 */
+}
+
+.hint-container button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hint-container span {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 📱 スマホ表示時の調整 */
+@media screen and (max-width: 768px) {
+    #viewer {
+        height: 75vh; /* スマホでは少し小さめに */
+    }
+    
+    object {
+        width: 90%; /* スマホでは幅を少し縮小 */
+        height: 75vh; 
+    }
+
+    .controls {
+        bottom: 5px;
+        padding: 5px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    input[type="password"] {
+        font-size: 14px;
+        padding: 5px;
+        width: 80px;
+    }
+
+    /* 📌 スマホでも「暗号を見る」ボタンを「次へ」の右側に配置 */
+    .hint-container {
+        margin-left: 5px; /* スマホで狭くなりすぎないように調整 */
+    }
+}
