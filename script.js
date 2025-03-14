@@ -1,14 +1,17 @@
 const pdfFiles = [
    "ステップ4-1.pdf",
-    "ステップ4-2.pdf"
+    "ステップ4-2-1.pdf",
+    "ステップ4-2-2.pdf"
 ];
 
 const passwords = {
-   "ステップ4-1.pdf": "CARBOTTI"
+   "ステップ4-1.pdf": "CARBOTTI",
+    "ステップ4-2-1.pdf": "IBIZA"
 };
 
 const hints = {
-    "ステップ4-1.pdf": "CARBOTTI"
+    "ステップ4-1.pdf": "CARBOTTI",
+   "ステップ4-2-1.pdf": "IBIZA"
 };
 
 let currentIndex = 0;
